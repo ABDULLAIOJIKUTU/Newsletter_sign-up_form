@@ -1,0 +1,127 @@
+:root {
+  /* text-colors */
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hwb(235 21% 69%);
+  --grey: hsl(231, 7%, 60%);
+  --off-white: hsl(0, 0%, 100%);
+  /* font-props */
+  --font-size: 16px;
+  --font-weight-light: 600;
+  --font-weight-bold: 700;
+}
+/* uni-styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+/* body-styles */
+body {
+  /* font-family: [Roboto](https://fonts.google.com/specimen/Roboto); */
+  box-sizing: inherit;
+  background: rgba(0, 0, 0, 0.88);
+  padding: 20px;
+  /* overflow-y: hidden; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  margin: auto;
+  width: 375px;
+  /* height: 85dvh; */
+  /* border: 1px solid var(--charcoal-grey); */
+  background: var(--off-white);
+}
+
+/* img styles */
+.container > img {
+  margin-bottom: 12px;
+}
+.gen-div {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  gap: 1rem;
+  padding: 18px;
+  color: var(--dark-slate-grey);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-light);
+}
+
+.text > h1 {
+  padding: 1rem 0;
+  /* font-weight:; */
+  /* font-size: 3rem; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+label,
+input {
+  /* border: 1px solid var(--charcoal-grey); */
+  display: block;
+}
+form > label {
+  padding: 6px 0;
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+}
+
+#email,
+#submit {
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 317px;
+  padding: 18px;
+  font-size: 16px;
+  font-weight: bold;
+  /* color: #90ee9075; */
+
+  /* width: ; */
+}
+#email {
+  border: 2px solid var(--grey);
+  outline: none;
+}
+#email::placeholder {
+  font-weight: 640;
+  color: var(--off-white);
+  /* line-height: normal; */
+}
+
+/* button styles */
+#submit {
+  margin: 20px 0;
+  border: none;
+  color: var(--off-white);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--dark-slate-grey);
+}
+.lists {
+  margin: auto 12px;
+  padding: 10px;
+  color: var(--dark-slate-grey);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-light);
+}
+
+.lists li {
+  margin-bottom: 8px;
+  padding: 0 0 12px;
+  list-style-image: url(/assets/images/icon-list.svg);
+  /* border: 2px solid blueviolet; */
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: lightgreen;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px 20px;
+  border: "2px solid green";
+  border-radius: 5px;
+  display: none; /* Initially hidden */
+}

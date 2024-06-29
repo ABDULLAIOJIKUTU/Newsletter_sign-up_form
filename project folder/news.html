@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <link rel="stylesheet" href="news.css" />
+  </head>
+  <body>
+    <div id="toast" class="toast"></div>
+
+    <!-- container div -->
+    <div class="container">
+      <img src="/assets/images/illustration-sign-up-mobile.svg" />
+
+      <div class="gen-div">
+        <!-- text box start -->
+        <div class="text">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        </div>
+        <!-- text-box-ends -->
+
+        <!-- lists-box-start -->
+        <div class="lists">
+          <ul class="updates">
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+        </div>
+        <!-- lists-box-ends -->
+
+        <!-- Sign-up form start -->
+        <form id="form">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="email@company.com"
+            required
+          />
+          <input
+            type="button"
+            value="Subscribe to monthly newsletter"
+            id="submit"
+          />
+          <!-- <input type="button"    id="submit"value="Subscribe to monthly newsletter" /> -->
+        </form>
+        <!-- Sign-up form end -->
+      </div>
+    </div>
+    <script src="news.js"></script>
+  </body>
+</html>
