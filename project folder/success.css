@@ -26,7 +26,7 @@ body {
 }
 /* container-styles */
 .container {
-  margin: 12dvh auto;
+  margin: 10dvh auto;
   width: 360px;
   padding: 30px;
   background: var(--off-white);
@@ -34,13 +34,13 @@ body {
 
 /* image-styles */
 .success {
-  margin-top: 12rem;
+  margin-top: 10rem;
   margin-bottom: 4rem;
 }
 /* header-styles */
 header > p {
   margin-bottom: 3rem;
-  font-size: 4rem;
+  font-size: 3.6rem;
   font-weight: bolder;
   line-height: 1;
   color: var(--dark-slate-grey);
@@ -51,7 +51,7 @@ main > p {
   font-size: var(--font-size);
   padding: 0 12px 0 0;
   color: var(--dark-slate-grey);
-  margin-bottom: 24rem;
+  margin-bottom: 19rem;
 }
 
 /* button-styles */
@@ -69,15 +69,15 @@ main > p {
   cursor: pointer;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 780px) {
   body {
     background: var(--charcoal-grey);
-
+    /* overflow-y: hidden; */
 
     .container {
       border-radius: 23px;
-      margin: 24dvh auto;
-      padding: 5rem;
+      margin: 14dvh auto;
+      padding: 4.4rem;
     }
 
     .success {
@@ -97,7 +97,7 @@ main > p {
 
     header > p {
       margin-bottom: 2rem;
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
 }

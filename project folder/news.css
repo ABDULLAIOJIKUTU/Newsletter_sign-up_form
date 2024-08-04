@@ -39,11 +39,16 @@ body {
 .container > img {
   margin-bottom: 12px;
 }
+.container .desk-img {
+  /* border: 2px solid red; */
+  display: none;
+}
 .gen-div {
   display: flex;
   flex-direction: column;
   flex-flow: row wrap;
   gap: 1rem;
+  /* border: 2px solid blue; */
   padding: 18px;
   color: var(--dark-slate-grey);
   font-size: var(--font-size);
@@ -70,23 +75,26 @@ form > label {
 #email,
 #submit {
   box-sizing: border-box;
-  border-radius: 6px;
+  border-radius: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 317px;
   padding: 18px;
   font-size: 16px;
   font-weight: bold;
-  /* color: #90ee9075; */
-
-  /* width: ; */
+  cursor: pointer;
 }
 #email {
   border: 2px solid var(--grey);
   outline: none;
 }
+#email:focus {
+  border: 2px solid var(--charcoal-grey);
+  cursor: default;
+  outline: none;
+}
 #email::placeholder {
-  font-weight: 640;
-  color: var(--off-white);
+  font-weight: 600;
+  color: rgb(104, 103, 103);
   /* line-height: normal; */
 }
 
@@ -107,10 +115,11 @@ form > label {
 }
 
 .lists li {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   padding: 0 0 12px;
   list-style-image: url(/assets/images/icon-list.svg);
   /* border: 2px solid blueviolet; */
+  /* color: rgba(240, 128, 128, 0.651); */
 }
 .toast {
   position: fixed;
@@ -121,7 +130,57 @@ form > label {
   font-size: 16px;
   color: #fff;
   padding: 10px 20px;
-  border: "2px solid green";
+  border: "1px solid green";
   border-radius: 5px;
   display: none; /* Initially hidden */
+}
+.news {
+  text-decoration: none;
+}
+
+/* desktop styles */
+@media screen and (min-width: 996px) {
+  body {
+    background: var(--charcoal-grey);
+    padding: 16dvh 0;
+    /* overflow-y: hidden; */
+    .container {
+      margin: auto;
+      padding: 1.4rem;
+      min-width: 900px;
+      display: flex;
+      flex-direction: row-reverse;
+      border-radius: 28px;
+      /* border: 2px solid red; */
+    }
+    .text p {
+      max-width: 400px;
+      margin-bottom: 8px;
+    }
+    .text h1 {
+      padding: 1.5rem 0;
+      font-size: 2.8rem;
+    }
+    .container .desk-img {
+      display: block;
+      margin: auto;
+      border-radius: 0px;
+    }
+    .container > img {
+      display: none;
+    }
+    .gen-div {
+      max-height: 500px;
+      padding-left: 2rem;
+      margin: auto 0;
+    }
+    #email,
+    #submit {
+      min-width: 400px;
+    }
+    #submit:active {
+      background: linear-gradient(hsl(15, 100%, 61%), #ff527a);
+      /* background:color-mix(in hsl shorter hue, color percentage, color percentage); */
+    }
+  }
 }
