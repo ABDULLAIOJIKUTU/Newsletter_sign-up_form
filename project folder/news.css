@@ -121,19 +121,70 @@ form > label {
   /* border: 2px solid blueviolet; */
   /* color: rgba(240, 128, 128, 0.651); */
 }
-.toast {
+/* Styles for the toast */
+#toast {
   position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: lightgreen;
-  font-size: 16px;
-  color: #fff;
-  padding: 10px 20px;
-  border: "1px solid green";
+  padding: 10px;
   border-radius: 5px;
-  display: none; /* Initially hidden */
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
+
+/* Smooth transition for success */
+@keyframes fadeInSuccess {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutSuccess {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.success {
+  animation: fadeInSuccess 0.5s forwards, fadeOutSuccess 0.5s forwards;
+}
+
+/* Shaking animation for error */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.error {
+  animation: shake 0.5s;
+}
+
+/* Additional styles for input fields */
+input {
+  transition: background-color 0.5s ease, border 0.5s ease;
+}
+
 .news {
   text-decoration: none;
 }

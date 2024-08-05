@@ -16,9 +16,10 @@ submitButton.addEventListener("click", () => {
     // Valid email format
     emailInput.style.backgroundColor = "lightgreen";
     emailInput.style.border = "2px solid green";
+
     // Change background color
 
-    showToast("Email is valid!");
+    showToast("Email is valid!", ".success");
     toast.style.border = "2px solid green";
     toast.style.color = "black";
     toast.style.backgroundColor = "lightgreen";
@@ -32,27 +33,21 @@ submitButton.addEventListener("click", () => {
     emailInput.style.border = "2px solid red";
 
     // Change background color
-    showToast("Please enter a valid email address.");
+    showToast("Please enter a valid email address.", ".error");
     toast.style.border = "2px solid red";
     toast.style.backgroundColor = "lightcoral";
     // Display error pop-up message
   }
 
-  // function showToast(message) {
-  //   toast.textContent = message;
-  //   toast.style.opacity = 1;
-  //   setTimeout(() => {
-  //     toast.style.opacity = 0;
-  //   }, 3000);
-  // }
-
   // Reset background color after 1 second (optional)
   setTimeout(() => {
-    emailInput.style.backgroundColor = "var(--off-white: hsl(0, 0%, 100%);)";
+    emailInput.style.backgroundColor = "var(--off-white)";
+    emailInput.style.border = "2px solid var(--charcoal-grey)";
   }, 1000);
 });
-function showToast(message) {
+function showToast(message, type) {
   toast.textContent = message;
+  toast.className = type; // Apply animation class
   toast.style.display = "block";
   toast.style.opacity = 1;
 
@@ -61,4 +56,27 @@ function showToast(message) {
     toast.style.opacity = 0;
     toast.style.display = "none";
   }, 1000);
+  // Hide toast after animation ends
+
+  setTimeout(() => {
+    toast.style.opacity = 0;
+    // Remove the class after opacity transition ends
+    setTimeout(() => {
+      toast.className = ""; // Reset class
+    }, 500);
+  }, 3000);
 }
+// function showToast(message, type) {
+//   toast.textContent = message;
+//   toast.className = type; // Apply animation class
+//   toast.style.opacity = 1;
+
+//   // Hide toast after animation ends
+//   setTimeout(() => {
+//     toast.style.opacity = 0;
+//     // Remove the class after opacity transition ends
+//     setTimeout(() => {
+//       toast.className = ""; // Reset class
+//     }, 500);
+//   }, 3000);
+// }
